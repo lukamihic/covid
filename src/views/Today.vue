@@ -86,8 +86,8 @@ export default {
     width: 90%;
     margin-left: 10%;
 }
-.card-container {
-    background: none;
+.card-container, .card-container.v-card.v-card--outlined.v-sheet.theme--light {
+    background: none !important;
 }
 h3 {
     padding-bottom: 20px;
