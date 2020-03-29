@@ -1,32 +1,84 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <v-app>
+    <router-view></router-view>
+    <div class="nav">
+      <router-link to="/">
+      <div class="nav-head">
+        <h2>CoVID-19</h2>
+        <h3>Balkans</h3>
+      </div>
+      </router-link>
+      <router-link to="/">
+      <div class="nav-item"
+      @click="activeBtn='today'" :class="{active: activeBtn === 'today' }">
+        <v-icon dark>mdi-calendar-today</v-icon>
+        <p>Danas</p>
+      </div>
+      </router-link>
+      <router-link to="/progress">
+      <div class="nav-item"
+      @click="activeBtn='stats'" :class="{active: activeBtn === 'stats' }">
+        <v-icon dark>mdi-chart-bell-curve</v-icon>
+        <p>Razvoj</p>
+      </div>
+      </router-link>
+      <router-link to="/advice">
+      <div class="nav-item"
+      @click="activeBtn='info'" :class="{active: activeBtn === 'info' }">
+        <v-icon dark>mdi-information</v-icon>
+        <p>Savjeti</p>
+      </div>
+      </router-link>
+      <router-link to="/questionaire">
+      <div class="nav-item"
+      @click="activeBtn='test'" :class="{active: activeBtn === 'test' }">
+        <v-icon dark>mdi-account-question</v-icon>
+        <p>Upitnik</p>
+      </div>
+      </router-link>
     </div>
-    <router-view/>
-  </div>
+  </v-app>
 </template>
 
-<style lang="less">
+<script>
+
+export default {
+  name: 'App',
+
+  components: {
+  },
+
+  data: () => ({
+    activeBtn: 'today',
+  }),
+};
+</script>
+
+<style scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  background: rgb(70, 70, 70);
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.nav {
+  width: 10%;
+  height: 100%;
+  position: fixed;
+  background: rgb(40, 40, 40);
+}
+.nav-item, .nav-head {
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 0;
+}
+.nav-item:hover {
+  background: rgb(55, 55, 55);
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: white !important;
+}
+.active {
+  background:rgb(55, 55, 55);
+  font-weight: bold;
 }
 </style>
