@@ -54,7 +54,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #app {
   background: rgb(70, 70, 70);
 }
@@ -80,5 +80,17 @@ a {
 .active {
   background:rgb(55, 55, 55);
   font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+  .nav {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+  }
+  .today, .advice, .progress, .quest {
+    margin-top: 400px;
+    width: 100% !important;
+    margin-left: 0px !important;
+  }
 }
 </style>
