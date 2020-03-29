@@ -73,7 +73,7 @@ label, input {
     color: white !important;
 }
 .v-data-table.theme--dark {
-    background: none;
+    background: none !important;
 }
 .v-select__selection.v-select__selection--comma {
     color: white !important;
