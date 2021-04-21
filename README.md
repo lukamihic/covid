@@ -1,6 +1,7 @@
 # covid
 A simple web application, made as a result of lockdown boredom, collecting data from a public repository, which is updated on daily basis (https://pomber.github.io/covid19/timeseries.json).
 The application is implemented through Vue.js with the help of Vuetify.
+It is available on : https://cov-balk-staging.netlify.app/#/
 ## Project setup
 ```
 npm install
